@@ -88,6 +88,7 @@ def write_df_to_bucket(spark, df, bucket_name: str, file_path: str, file_format:
         )
 
     # Start the write operation
+    print('MODEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ',mode)
     writer = df.write.format(file_format).mode(mode).options(**options)
     
     # If partitioning is specified, add partitioning to the write operation
@@ -174,7 +175,7 @@ def read_portfolio(spark):
     
     # Construct GCS file path
     BUCKET_NAME = "risk_data_project"
-    file_name = "raw/test_portfolio_6.csv"
+    file_name = "raw/test_portfolio_9.csv"
 
     portfolio_df = (
         read_file_from_bucket(
